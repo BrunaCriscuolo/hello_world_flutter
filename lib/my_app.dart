@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeController(child: const HomePage()),
+      home: HomeController(notifier: ValueNotifier(0), child: const HomePage()),
     );
   }
 }
