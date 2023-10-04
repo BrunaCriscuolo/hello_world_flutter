@@ -7,6 +7,10 @@ class HomeController extends InheritedNotifier<ValueNotifier<int>> {
     required super.notifier,
   });
 
+  static HomeController of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<HomeController>()!;
+  }
+
   int get value => notifier!.value;
 
   increment() {
