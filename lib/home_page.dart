@@ -14,46 +14,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(controller: controller),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.add),
-                  onPressed: () {
-                    final text = controller.text;
-                    print(text);
-                    setState(() {
-                      list.add(text);
-                      controller.clear(); // Limpar o campo de texto
-                    });
-                  },
-                )
-              ],
+        appBar: AppBar(
+          title: const Text('Home'),
+        ),
+        body: Center(
+          child: Stack(alignment: Alignment.center, children: [
+            Container(
+              color: Colors.blue,
+              width: 80,
+              height: 80,
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: list.length,
-              itemBuilder: (context, index) {
-                final item = list[index];
-
-                return ListTile(
-                  title: Text(item),
-                );
-              },
+            Container(
+              color: Colors.red,
+              width: 50,
+              height: 50,
             ),
-          )
-        ],
-      ),
-    );
+          ]),
+        ));
   }
 }
