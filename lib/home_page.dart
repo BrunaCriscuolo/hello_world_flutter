@@ -22,8 +22,8 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              child: Image.network(
-                'https://www.addictivetips.com/app/uploads/2020/04/HmgQJDl.jpg',
+              child: Image.asset(
+                'assets/images/background.jpg',
                 fit: BoxFit.cover,
               ),
             ),
