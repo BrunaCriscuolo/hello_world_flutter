@@ -10,6 +10,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int counter = 0;
 
+  static const names = ['Maria', 'José', 'Pedro', 'Antonio'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,19 +21,20 @@ class _HomePageState extends State<HomePage> {
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              for (var i = 0; i < 10; i++)
-                Container(
-                    width: 80,
-                    height: 80,
-                    color: Colors.red,
-                    margin: const EdgeInsets.all(12)),
-            ],
-          ),
+        child: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) {
+            final name = names[index];
+            return Container(
+              width: 80,
+              height: 80,
+              color: Colors.red,
+              margin: const EdgeInsets.all(12),
+              child: ListTile(
+                title: Text(name),
+              ),
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
