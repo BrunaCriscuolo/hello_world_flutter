@@ -19,8 +19,16 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Center(
           child: Stack(alignment: Alignment.center, children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Image.network(
+                'https://www.addictivetips.com/app/uploads/2020/04/HmgQJDl.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
             Container(
-              color: Colors.blue,
+              color: Colors.green,
               width: 80,
               height: 80,
             ),
